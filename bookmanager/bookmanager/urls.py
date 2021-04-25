@@ -19,5 +19,5 @@ from django.urls import  include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('blog/',include('book.urls'))  # 第一个参数可以理解为子应用
+    path('book/',include('book.urls'))  # 第一个参数可以理解为子应用
 ]
