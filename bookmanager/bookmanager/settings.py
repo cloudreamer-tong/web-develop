@@ -13,7 +13,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # __file__指的是当前文件 abspath指的是绝对路径 dirname指的是当前目录的路径
+# 所以最终哦的结果就是当前工程的目录
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -23,7 +24,7 @@ SECRET_KEY = '^4ch+2ml0piy044bpu754!_)jgfl3u)x3!)oz885#0!@9&9#s-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
+# 该列表放的是可以以什么样的方式访问我们的项目 如果是'*'则代表可以用本地回患地址，或者用本地ip都可以
 ALLOWED_HOSTS = []
 
 # Application definition
@@ -74,7 +75,7 @@ WSGI_APPLICATION = 'bookmanager.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',  #也是一个关系行数据库
+        'ENGINE': 'django.db.backends.sqlite3',  # 也是一个关系行数据库
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
@@ -114,3 +115,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,'static')
+]
